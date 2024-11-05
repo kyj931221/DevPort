@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev Port</title>
+  <title>Dev Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,20 +16,49 @@
 
     .header {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .header h1 {
+      font-size: 3.0em;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.0em;
+      color: #555;
+      max-width: 1000px;
+      line-height: 1.5;
+    }
+
+    .search-bar {
+      margin: 20px 0;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .search-bar input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
     }
 
     .year-section {
       width: 90%;
       max-width: 1000px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .year-title {
-      font-size: 1.5em;
+      font-size: 1.8em;
       font-weight: bold;
-      margin-bottom: 10px;
       color: #333;
+      margin-bottom: 15px;
     }
 
     .game-grid {
@@ -40,68 +69,140 @@
 
     .game-box {
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
       color: inherit;
+      background-color: #fafafa;
     }
 
     .game-box img {
       width: 100%;
-      height: auto;
+      height: 150px;
+      object-fit: cover;
     }
 
     .game-box:hover {
       transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .tag-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background-color: #007bff;
+      color: #fff;
+      font-size: 0.8em;
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+
+    .highlight {
+      box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.82);
     }
 
     .description {
-      padding: 10px;
+      padding: 15px;
+    }
+
+    .description h2 {
+      font-size: 1.3em;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .description p {
+      font-size: 0.95em;
+      color: #666;
     }
   </style>
 </head>
 <body>
 <div class="header">
   <h1>My Game Content</h1>
-  <p>Personal portfolio website to build and publish games created on the web.</p>
+  <p>디지털 콘텐츠 (Game, VR, AR)를 개발하여 WebGL 기반으로 빌드한 콘텐츠 모음 사이트입니다.</p>
+</div>
+
+<!-- 검색 바 -->
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="게임 이름을 검색하세요." oninput="searchGames()">
 </div>
 
 <!-- 2024 Section -->
 <div class="year-section">
   <div class="year-title">2024</div>
   <div class="game-grid">
-    <!-- 01. 그때 갑자기 닌자가 나타났다. -->
-    <a href="https://kyj931221.github.io/Web_Ninja/" target="_blank" class="game-box">
-      <img src="./Image/그때 갑자기 닌자가 나타났다.png" alt="Game 1 Image">
+    <!-- 01. 그때 갑자기 닌자가 나타났다 -->
+    <a href="https://kyj931221.github.io/Web_Ninja/" target="_blank" class="game-box" data-title="그때 갑자기 닌자가 나타났다">
+
+      <div class="tag-container">
+        <span class="tag">Arcade</span>
+        <span class="tag">3D</span>
+      </div>
+
+      <img src="./Image/그때 갑자기 닌자가 나타났다.png" alt="그때 갑자기 닌자가 나타났다 게임 이미지">
       <div class="description">
         <h2>그때 갑자기 닌자가 나타났다!</h2>
-        <p>Exciting Unity game with amazing features.</p>
-      </div>
-    </a>
-    <!-- 02. 달로 향하자! -->
-    <a href="https://kyj931221.github.io/WEB_for_all_of_us/" target="_blank" class="game-box">
-      <img src="./Image/달로%20향하자.png" alt="Game 1 Image">
-      <div class="description">
-        <h2>달로 향하자!</h2>
-        <p>Exciting Unity game with amazing features.</p>
-      </div>
-    </a>
-    <!-- 지구를 지켜라! -->
-    <a href="https://kyj931221.github.io/WEB_Protect_the_Earth/" target="_blank" class="game-box">
-      <img src="./Image/지구를%20지켜라.png" alt="Game 1 Image">
-      <div class="description">
-        <h2>지구를 지켜라!</h2>
-        <p>Exciting Unity game with amazing features.</p>
+        <p>랜덤으로 생성되는 닌자의 공격을 피해 달아나는 모바일 아케이드 게임.</p>
       </div>
     </a>
 
-    <!-- Add more 2024 games here -->
+    <!-- 02. 달로 향하자 -->
+    <a href="https://kyj931221.github.io/WEB_for_all_of_us/" target="_blank" class="game-box" data-title="달로 향하자">
+
+      <div class="tag-container">
+        <span class="tag">Flatformer</span>
+        <span class="tag">2D</span>
+      </div>
+
+      <img src="./Image/달로 향하자.png" alt="달로 향하자 게임 이미지">
+      <div class="description">
+        <h2>달로 향하자!</h2>
+        <p>움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 도달하는 플랫포머 게임.</p>
+      </div>
+    </a>
+
+    <!-- 03. 지구를 지켜라 -->
+    <a href="https://kyj931221.github.io/WEB_Protect_the_Earth/" target="_blank" class="game-box" data-title="지구를 지켜라">
+
+      <div class="tag-container">
+        <span class="tag">AR</span>
+        <span class="tag">Shooting</span>
+      </div>
+
+      <img src="./Image/지구를 지켜라.png" alt="지구를 지켜라 게임 이미지">
+      <div class="description">
+        <h2>지구를 지켜라!</h2>
+        <p>실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임.</p>
+      </div>
+    </a>
+    <!-- 추가 게임을 여기 추가 -->
   </div>
 </div>
 
-<!-- More year sections as needed -->
+<script>
+  function searchGames() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const gameBoxes = document.querySelectorAll('.game-box');
 
+    gameBoxes.forEach(box => {
+      const title = box.getAttribute('data-title').toLowerCase();
+      if (title.includes(input) && input !== "") {
+        box.classList.add('highlight');
+      } else {
+        box.classList.remove('highlight');
+      }
+    });
+  }
+</script>
 </body>
 </html>
