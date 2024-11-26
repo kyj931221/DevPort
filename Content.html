@@ -61,27 +61,43 @@
             margin-bottom: 15px;
         }
 
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+        .game-container {
+            display: flex; /* Flexbox 사용 */
+            flex-wrap: wrap; /* 박스가 화면 너비에 맞춰 줄바꿈 */
+            justify-content: center; /* 가운데 정렬 */
+            gap: 20px; /* 박스 간격 */
+            padding: 20px;
         }
 
         .game-box {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: inherit;
-            background-color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 250px; /* 모든 박스 동일 크기 */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 0; /* 부모 컨테이너의 gap으로 간격 조정 */
+            box-sizing: border-box;
         }
 
-        .game-box img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
+        .game-box.highlight {
+            border: 2px solid #007bff; /* 강조 색상 */
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.5); /* 강조 효과 */
+            transform: scale(1.05); /* 약간 확대 */
+            transition: transform 0.2s, box-shadow 0.2s; /* 부드러운 전환 */
+        }
+
+        /* 게임 이미지 */
+        .game-image {
+            width: 100%; /* 이미지를 카드 너비에 맞춤 */
+            height: 150px; /* 고정된 높이 설정 */
+            object-fit: cover; /* 비율 유지하며 이미지가 잘리지 않도록 */
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
         .game-box:hover {
@@ -89,40 +105,66 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+        /* 태그 스타일 */
         .tag-container {
-            position: absolute;
-            top: 10px;
-            left: 10px;
             display: flex;
+            justify-content: center;
             gap: 5px;
-            flex-wrap: wrap;
+            margin-bottom: 10px;
         }
 
         .tag {
             background-color: #007bff;
-            color: #fff;
-            font-size: 0.8em;
-            padding: 2px 8px;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
             border-radius: 5px;
         }
 
-        .highlight {
-            box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.82);
-        }
-
+        /* 설명 박스 */
         .description {
-            padding: 15px;
+            text-align: center;
         }
 
         .description h2 {
-            font-size: 1.3em;
-            margin: 0 0 8px;
+            font-size: 1.5em;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .description p {
-            font-size: 0.95em;
-            color: #666;
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* 버튼 스타일 */
+        .play-link, .detail-link {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .play-link {
+            background-color: #28a745; /* 초록색 버튼 */
+        }
+
+        .detail-link {
+            background-color: #007bff; /* 파란색 버튼 */
+        }
+
+        .play-link:hover {
+            background-color: #218838;
+        }
+
+        .detail-link:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -140,104 +182,105 @@
 <!-- 2024 Section -->
 <div class="year-section">
     <div class="year-title">2024</div>
-    <div class="game-grid">
-        <!-- 01. 그때 갑자기 닌자가 나타났다 -->
-        <a href="https://kyj931221.github.io/Web_Ninja/" target="_blank" class="game-box" data-title="그때 갑자기 닌자가 나타났다">
+    <div class="game-container">
 
+        <!-- 01. 그때 갑자기 닌자가 나타났다 -->
+        <div class="game-box" data-title="그때 갑자기 닌자가 나타났다">
+            <!-- 게임 태그 -->
             <div class="tag-container">
                 <span class="tag">Arcade</span>
                 <span class="tag">3D</span>
             </div>
-
-            <img src="./Image/그때 갑자기 닌자가 나타났다.png" alt="그때 갑자기 닌자가 나타났다 게임 이미지">
+            <!-- 게임 이미지 -->
+            <img src="./Image/그때 갑자기 닌자가 나타났다.png" alt="그때 갑자기 닌자가 나타났다 게임 이미지" class="game-image">
+            <!-- 설명 및 링크 -->
             <div class="description">
                 <h2>그때 갑자기 닌자가 나타났다!</h2>
                 <p>랜덤으로 생성되는 닌자의 공격을 피해 달아나는 모바일 아케이드 게임.</p>
+                <a href="https://kyj931221.github.io/Web_Ninja/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="./Detailed%20Page/202401_game_ninja.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
+
+        </div>
 
         <!-- 02. 달로 향하자 -->
-        <a href="https://kyj931221.github.io/WEB_for_all_of_us/" target="_blank" class="game-box" data-title="달로 향하자">
-
+        <div class="game-box" data-title="달로 향하자">
             <div class="tag-container">
-                <span class="tag">Flatformer</span>
+                <span class="tag">Platformer</span>
                 <span class="tag">2D</span>
             </div>
-
-            <img src="./Image/달로 향하자.png" alt="달로 향하자 게임 이미지">
+            <img src="./Image/달로 향하자.png" alt="달로 향하자 게임 이미지" class="game-image">
             <div class="description">
                 <h2>달로 향하자!</h2>
                 <p>움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 도달하는 플랫포머 게임.</p>
+                <a href="https://kyj931221.github.io/WEB_for_all_of_us/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_moon.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
+        </div>
 
         <!-- 03. 지구를 지켜라 -->
-        <a href="https://kyj931221.github.io/WEB_Protect_the_Earth/" target="_blank" class="game-box"
-           data-title="지구를 지켜라">
-
+        <div class="game-box" data-title="지구를 지켜라">
             <div class="tag-container">
                 <span class="tag">AR</span>
                 <span class="tag">Shooting</span>
             </div>
-
-            <img src="./Image/지구를 지켜라.png" alt="지구를 지켜라 게임 이미지">
+            <img src="./Image/지구를 지켜라.png" alt="지구를 지켜라 게임 이미지" class="game-image">
             <div class="description">
                 <h2>지구를 지켜라!</h2>
                 <p>실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임.</p>
+                <a href="https://kyj931221.github.io/WEB_Protect_the_Earth/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_earth.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
+        </div>
 
         <!-- 04. The UnScene -->
-        <a href="https://kyj931221.github.io/Web_UnScene/" target="_blank" class="game-box"
-           data-title="The UnScene: Fear Unseen">
-
+        <div class="game-box" data-title="The UnScene: Fear Unseen">
             <div class="tag-container">
                 <span class="tag">TPS</span>
                 <span class="tag">Horror</span>
                 <span class="tag">3D</span>
             </div>
-
-            <img src="./Image/The%20UnScene.jpg" alt="The UnScene 게임 이미지">
+            <img src="./Image/The%20UnScene.jpg" alt="The UnScene 게임 이미지" class="game-image">
             <div class="description">
                 <h2>The UnScene: Fear Unseen</h2>
-                <p>빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임</p>
+                <p>빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임.</p>
+                <a href="https://kyj931221.github.io/Web_UnScene/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_unscene.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
+        </div>
 
         <!-- 05. 트릭컬 리바이브 : 버터의 즐거운 산책 -->
-        <a href="https://kyj931221.github.io/trickcal_fan_game_01/IntroScene" target="_blank" class="game-box"
-           data-title="The UnScene: Fear Unseen">
-
+        <div class="game-box" data-title="트릭컬 리바이브 : 버터의 즐거운 산책">
             <div class="tag-container">
                 <span class="tag">FanGame</span>
-                <span class="tag">trickcal</span>
+                <span class="tag">Trickcal</span>
                 <span class="tag">Web</span>
             </div>
-
-            <img src="./Image/game-title.png" alt="Web Trickcal fan game 이미지">
+            <img src="./Image/game-title.png" alt="트릭컬 리바이브 : 버터의 즐거운 산책 이미지" class="game-image">
             <div class="description">
                 <h2>트릭컬 리바이브 : 버터의 즐거운 산책</h2>
-                <p>트릭컬 리바이브 팬 게임</p>
+                <p>트릭컬 리바이브 팬 게임.</p>
+                <a href="https://kyj931221.github.io/trickcal_fan_game_01/IntroScene" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_trickcal_butter.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
+        </div>
 
-        <!-- 05. 트릭컬 리바이브 : 델리아의 남극 탐험 -->
-        <a href="https://polytechnics-team-one.github.io/Antarctic-exploration/" target="_blank" class="game-box"
-           data-title="The UnScene: Fear Unseen">
-
+        <!-- 06. 트릭컬 리바이브 : 델리아의 남극 탐험 -->
+        <div class="game-box" data-title="트릭컬 리바이브 : 델리아의 남극 탐험">
             <div class="tag-container">
                 <span class="tag">FanGame</span>
-                <span class="tag">trickcal</span>
+                <span class="tag">Trickcal</span>
                 <span class="tag">Web</span>
             </div>
-
-            <img src="./Image/델리아의%20남극탐험.png" alt="Web Trickcal fan game 이미지">
+            <img src="./Image/델리아의%20남극탐험.png" alt="트릭컬 리바이브 : 델리아의 남극 탐험 이미지" class="game-image">
             <div class="description">
                 <h2>트릭컬 리바이브 : 델리아의 남극 탐험</h2>
-                <p>트릭컬 리바이브 팬 게임</p>
+                <p>트릭컬 리바이브 팬 게임.</p>
+                <a href="https://polytechnics-team-one.github.io/Antarctic-exploration/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_trickcal_delia.html" class="detail-link">자세히 보기</a>
             </div>
-        </a>
-        <!-- 추가 게임을 여기 추가 -->
+        </div>
+
     </div>
 </div>
 
@@ -258,10 +301,12 @@
 
         gameBoxes.forEach(box => {
             const title = box.getAttribute('data-title').toLowerCase();
-            if (title.includes(input) && input !== "") {
-                box.classList.add('highlight');
+            if (title.includes(input)) {
+                box.style.display = 'flex'; // 검색어와 일치하는 경우 박스를 보이기
+                box.classList.add('highlight'); // 강조 효과 추가
             } else {
-                box.classList.remove('highlight');
+                box.style.display = 'none'; // 검색어와 일치하지 않는 경우 숨기기
+                box.classList.remove('highlight'); // 강조 효과 제거
             }
         });
     }
