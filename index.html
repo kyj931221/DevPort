@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="img-area">
+        <div class="inner-area">
+            <img src="https://avatars.githubusercontent.com/u/29942300?s=400&u=a26fe2bf3452fad7c2716dcc592aa33a2ffc3c70&v=4">
+        </div>
+    </div>
+
+    <div class="icon dots" onclick="togglePanel('right')"></div>
+
+    <div class="name">KIM YOUNG JUN</div>
+    <div class="about">Developer</div>
+    <div class="social-icons">
+        <a href="#" class="git" onclick="location.href='https://github.com/kyj931221'"><img
+                src="./icon/git.png"></i></a>
+        <a href="#" class="Notion" onclick="location.href='https://glitter-stilton-332.notion.site/MY-CONTENTS-dc9e46e4b03643da8fdfe36599ae934b?pvs=4'"><img
+                src="./icon/notion.png"></i></a>
+        <a href="#" class="tistory" onclick="location.href='https://kyj931221.tistory.com/'"><img
+                src="./icon/티스토리.png"/></a>
+        <a href="#" class="youtube" onclick="location.href='https://www.youtube.com/@%EA%B9%80%EC%98%81%EC%A4%80-l2z'"><img
+                src="./icon/youtube.png"/></a>
+        <a href="mailto:kyj931221@gmail.com"><img src="./icon/email.png"/></a>
+    </div>
+    <div class="buttons">
+        <button onclick="location.href='content.html'">입장하기</button>
+    </div>
+
+</div>
+
+<!-- 오른쪽 사이드 패널 -->
+<!-- https://wooduino.tistory.com/236 -->
+<div id="rightPanel" class="side-panel right">
+    <h2>이력서</h2>
+    <iframe src="https://drive.google.com/file/d/1-CbQ41OfoD7qaUANlfmxteZi-KOnkBhc/preview" frameborder="0" width="100%" height="100%"></iframe>
+</div>
+
+<script src="profile.js"></script> <!-- JavaScript 파일 연결 -->
+
+</body>
+</html>

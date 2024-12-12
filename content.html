@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김깜냥의 포트폴리오</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script> <!-- JavaScript 파일 연결 -->
+    <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 연결 -->
+    <script>
+        $(document).ready(function () {
+            $("#nav-bar").load("sidebar.html");
+        });
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <h1>My Game Content</h1>
+    <p>디지털 콘텐츠 (Game, VR, AR)를 개발하여 WebGL 기반으로 빌드한 콘텐츠 모음 사이트입니다.</p>
+</div>
+
+<!-- 검색 바 -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="게임 이름을 검색하세요." oninput="searchGames()">
+</div>
+
+<!-- 2024 Section -->
+<div class="year-section">
+    <div class="year-title">2024</div>
+    <div class="game-container">
+
+        <!-- 01. 그때 갑자기 닌자가 나타났다 -->
+        <div class="game-box" data-title="그때 갑자기 닌자가 나타났다">
+            <!-- 게임 태그 -->
+            <div class="tag-container">
+                <span class="tag">Arcade</span>
+                <span class="tag">3D</span>
+            </div>
+            <!-- 게임 이미지 -->
+            <img src="./Image/그때 갑자기 닌자가 나타났다.png" alt="그때 갑자기 닌자가 나타났다 게임 이미지" class="game-image">
+            <!-- 설명 및 링크 -->
+            <div class="description">
+                <h2>그때 갑자기 닌자가 나타났다!</h2>
+                <p>랜덤으로 생성되는 닌자의 공격을 피해 달아나는 모바일 아케이드 게임.</p>
+                <a href="https://kyj931221.github.io/Web_Ninja/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="./Detailed%20Page/202401_game_ninja.html" class="detail-link">자세히 보기</a>
+            </div>
+
+        </div>
+
+        <!-- 02. 달로 향하자 -->
+        <div class="game-box" data-title="달로 향하자">
+            <div class="tag-container">
+                <span class="tag">Platformer</span>
+                <span class="tag">2D</span>
+            </div>
+            <img src="./Image/달로 향하자.png" alt="달로 향하자 게임 이미지" class="game-image">
+            <div class="description">
+                <h2>달로 향하자!</h2>
+                <p>움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 도달하는 플랫포머 게임.</p>
+                <a href="https://kyj931221.github.io/WEB_for_all_of_us/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_moon.html" class="detail-link">자세히 보기</a>
+            </div>
+        </div>
+
+        <!-- 03. 지구를 지켜라 -->
+        <div class="game-box" data-title="지구를 지켜라">
+            <div class="tag-container">
+                <span class="tag">AR</span>
+                <span class="tag">Shooting</span>
+            </div>
+            <img src="./Image/지구를 지켜라.png" alt="지구를 지켜라 게임 이미지" class="game-image">
+            <div class="description">
+                <h2>지구를 지켜라!</h2>
+                <p>실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임.</p>
+                <a href="https://kyj931221.github.io/WEB_Protect_the_Earth/" target="_blank" class="play-link">게임
+                    플레이하기</a>
+                <a href="game_earth.html" class="detail-link">자세히 보기</a>
+            </div>
+        </div>
+
+        <!-- 04. The UnScene -->
+        <div class="game-box" data-title="The UnScene: Fear Unseen">
+            <div class="tag-container">
+                <span class="tag">TPS</span>
+                <span class="tag">Horror</span>
+                <span class="tag">3D</span>
+            </div>
+            <img src="./Image/The%20UnScene.jpg" alt="The UnScene 게임 이미지" class="game-image">
+            <div class="description">
+                <h2>The UnScene: Fear Unseen</h2>
+                <p>빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임.</p>
+                <a href="https://kyj931221.github.io/Web_UnScene/" target="_blank" class="play-link">게임 플레이하기</a>
+                <a href="game_unscene.html" class="detail-link">자세히 보기</a>
+            </div>
+        </div>
+
+        <!-- 05. 트릭컬 리바이브 : 버터의 즐거운 산책 -->
+        <div class="game-box" data-title="트릭컬 리바이브 : 버터의 즐거운 산책">
+            <div class="tag-container">
+                <span class="tag">FanGame</span>
+                <span class="tag">Trickcal</span>
+                <span class="tag">Web</span>
+            </div>
+            <img src="./Image/game-title.png" alt="트릭컬 리바이브 : 버터의 즐거운 산책 이미지" class="game-image">
+            <div class="description">
+                <h2>트릭컬 리바이브 : 버터의 즐거운 산책</h2>
+                <p>트릭컬 리바이브 팬 게임.</p>
+                <a href="https://kyj931221.github.io/trickcal_fan_game_01/IntroScene" target="_blank" class="play-link">게임
+                    플레이하기</a>
+                <a href="game_trickcal_butter.html" class="detail-link">자세히 보기</a>
+            </div>
+        </div>
+
+        <!-- 06. 트릭컬 리바이브 : 델리아의 남극 탐험 -->
+        <div class="game-box" data-title="트릭컬 리바이브 : 델리아의 남극 탐험">
+            <div class="tag-container">
+                <span class="tag">FanGame</span>
+                <span class="tag">Trickcal</span>
+                <span class="tag">Web</span>
+            </div>
+            <img src="./Image/델리아의%20남극탐험.png" alt="트릭컬 리바이브 : 델리아의 남극 탐험 이미지" class="game-image">
+            <div class="description">
+                <h2>트릭컬 리바이브 : 델리아의 남극 탐험</h2>
+                <p>트릭컬 리바이브 팬 게임.</p>
+                <a href="https://polytechnics-team-one.github.io/Antarctic-exploration/" target="_blank"
+                   class="play-link">게임 플레이하기</a>
+                <a href="game_trickcal_delia.html" class="detail-link">자세히 보기</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 로드할 사이드바 -->
+<div id="nav-bar"></div>
+
+</body>
+</html>
