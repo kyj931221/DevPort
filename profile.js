@@ -12,3 +12,17 @@ function togglePanel() {
         profile.classList.remove('shift-left'); // 프로필 영역 중앙 복귀
     }
 }
+
+function showTab(tabId) {
+    // 모든 탭 버튼에서 active 클래스 제거
+    const allTabs = document.querySelectorAll('.tab-button');
+    allTabs.forEach((tab) => tab.classList.remove('active'));
+
+    // 모든 탭 콘텐츠에서 active 클래스 제거
+    const allContents = document.querySelectorAll('.tab-content');
+    allContents.forEach((content) => content.classList.remove('active'));
+
+    // 선택된 탭 버튼과 탭 콘텐츠에 active 클래스 추가
+    document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}

@@ -18,11 +18,19 @@ function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
 }
-
+// 타이틀
+$(document).ready(function () {
+    $("#header").load("header.html");
+});
+// 검색기능
+$(document).ready(function () {
+    $("#search-bar").load("searchbar.html");
+});
+// 사이드 메뉴 기능
 $(document).ready(function () {
     $("#nav-bar").load("sidebar.html");
 });
-
+// 게임 리스트
 $(document).ready(function () {
     $("#game-list").load("gamelist.html");
 });
