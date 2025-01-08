@@ -1,0 +1,71 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #757575; /* 어두운 배경 */
+    color: #ffffff;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50px; /* 화면 위에서 약간 떨어짐 */
+    left: 10px; /* 화면 왼쪽에서 떨어짐 */
+    width: 100px; /* 기본 너비 (축소 상태) */
+    height: 50%; /* 사이드바 높이 */
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
+    border-radius: 20px; /* 둥근 모서리 */
+    overflow: hidden; /* 내부 콘텐츠 숨김 */
+    transition: width 0.3s ease-in-out; /* 너비 애니메이션 */
+}
+
+.sidebar:hover {
+    width: 250px; /* 마우스 호버 시 너비 확장 */
+}
+
+.menu {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu li {
+    margin: 15px 0;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px; /* 원형 아이콘 디자인 */
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.menu a .icon {
+    font-size: 18px;
+    margin-right: 10px; /* 텍스트와 아이콘 간격 */
+}
+
+.menu a::after {
+    content: attr(data-label); /* 숨겨진 텍스트 */
+    opacity: 0; /* 기본 상태에서 숨김 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 10px; /* 아이콘 뒤에 여백 */
+}
+
+.sidebar:hover .menu a::after {
+    opacity: 1; /* 호버 시 텍스트 표시 */
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 호버 효과 */
+}

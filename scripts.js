@@ -14,13 +14,23 @@ function searchGames() {
     });
 }
 
+// 게임 테이블 로드
+$(document).ready(function () {
+    $("#content-table").load("./content-table/content-table.html", function () {
+        // 외부 HTML이 로드된 후 JavaScript 파일을 실행
+        const script = document.createElement("script");
+        script.src = "./content-table/content-table.js"; // content-table.js를 동적으로 추가
+        document.body.appendChild(script);
+    });
+});
+
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
 }
 // 타이틀
 $(document).ready(function () {
-    $("#header").load("header.html");
+    $("#header").load("./header/header.html");
 });
 // 검색기능
 $(document).ready(function () {
@@ -28,9 +38,21 @@ $(document).ready(function () {
 });
 // 사이드 메뉴 기능
 $(document).ready(function () {
-    $("#nav-bar").load("sidebar.html");
+    $("#sidebar").load("./side-bar/sidebar.html");
+});
+// 게임 테이블
+$(document).ready(function () {
+    $("#content-table").load("./content-table/content-table.html");
 });
 // 게임 리스트
 $(document).ready(function () {
-    $("#game-list").load("gamelist.html");
+    $("#game-content").load("game-content.html");
+});
+// 자격증 및 수상경력
+$(document).ready(function () {
+    $("#license-award").load("./license-award/license-award.html");
+});
+// Infomation
+$(document).ready(function () {
+    $("#my-info").load("./infomation/infomation.html");
 });
