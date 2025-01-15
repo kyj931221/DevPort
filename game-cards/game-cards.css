@@ -1,0 +1,169 @@
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 좌우 중앙 정렬 */
+    padding: 0 2rem; /* 좌우 여백 추가 */
+}
+
+.game-library {
+    padding: 2rem;
+    color: white;
+    background-color: #1a1f2e;
+}
+
+.game-library h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2a2f3e;
+    color: white;
+}
+
+.search-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3182f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background-color: #2a2f3e;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 1.5rem;
+}
+
+.game-info h2 {
+    margin: 0 0 1rem 0;
+}
+
+.game-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.tag.blue {
+    background-color: rgba(49, 130, 246, 0.2);
+    color: #3182f6;
+}
+
+.tag.purple {
+    background-color: rgba(147, 51, 234, 0.2);
+    color: #9333ea;
+}
+
+.game-description {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: transform 0.2s;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+}
+
+.social-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-button.github {
+    background-color: #24292e;
+    color: white;
+}
+
+.social-button.youtube {
+    background-color: #ff0000;
+    color: white;
+}
+
+.play-button {
+    width: 80%;  /* 버튼 너비를 80%로 줄임 */
+    padding: 0.75rem;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;  /* 좌우 마진을 auto로 설정하여 중앙 정렬 */
+}
+
+.play-button:hover {
+    background-color: #059669;
+    text-decoration: none;
+}
+
+/* 옵션: 버튼 컨테이너 추가하여 더 명확한 중앙 정렬 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
