@@ -18,6 +18,11 @@ $(document).ready(function () {
     $("#game-cards").load("./game-cards/game-cards.html");
 });
 
+// 게임 카드 로드
+$(document).ready(function () {
+    $("#devices").load("./devices/devices.html");
+});
+
 // 사이드바 로드
 $(document).ready(function () {
     $("#sidebar").load("./side-bar/sidebar.html");

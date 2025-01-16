@@ -84,70 +84,12 @@ body {
     font-size: 1.5rem;
 }
 
-/* 태그 스타일링 */
-.game-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.tag {
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    background-color: rgba(49, 130, 246, 0.2);
-    color: #3182f6;
-}
-
 /* 게임 설명 */
 .game-description {
     color: #9ca3af;
     margin-bottom: 1.5rem;
     font-size: 0.875rem;
     flex-grow: 1;
-}
-
-/* 소셜 링크 */
-.social-links {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.social-button {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.875rem;
-    color: white;
-    transition: transform 0.2s;
-}
-
-.social-button:hover {
-    transform: translateY(-2px);
-}
-
-.social-button img {
-    width: 20px;
-    height: 20px;
-}
-
-.social-button.github {
-    background-color: #24292e;
-}
-
-.social-button.youtube {
-    background-color: #ff0000;
-}
-
-.social-button.qa {
-    background-color: #496fc6;
 }
 
 /* 플레이 버튼 컨테이너 */
