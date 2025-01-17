@@ -17,7 +17,7 @@ $(document).ready(function() {
     function searchGames(searchTerm) {
         $('.game-card').each(function() {
             const gameTitle = $(this).find('h2').text().toLowerCase();
-            const gameTags = $(this).find('.hash-tags span').text().toLowerCase();
+            const gameTags = $(this).find('.game-tags span').text().toLowerCase();
             const gameDescription = $(this).find('.game-description').text().toLowerCase();
 
             if (gameTitle.includes(searchTerm) ||
