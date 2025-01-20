@@ -156,6 +156,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 0;  /* 패딩 제거 */
+    gap: 10px; /* 버튼 사이의 간격 */
 }
 
 /* 플레이 버튼 */
