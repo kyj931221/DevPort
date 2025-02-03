@@ -150,6 +150,13 @@ body {
     background-color: #496fc6;
 }
 
+.social-button.edu {
+    width: 100%;
+    max-width: 630px;
+    background-color: #273560;
+    color: white;
+}
+
 /* 플레이 버튼 컨테이너 */
 .button-container {
     width: 100%;
