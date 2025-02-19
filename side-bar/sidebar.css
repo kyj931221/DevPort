@@ -11,7 +11,7 @@ body {
     top: 50px; /* 화면 위에서 약간 떨어짐 */
     left: 10px; /* 화면 왼쪽에서 떨어짐 */
     width: 100px; /* 기본 너비 (축소 상태) */
-    height: 50%; /* 사이드바 높이 */
+    height: 80%; /* 사이드바 높이 */
     background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
     border-radius: 20px; /* 둥근 모서리 */
     overflow: hidden; /* 내부 콘텐츠 숨김 */
