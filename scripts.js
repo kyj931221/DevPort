@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
     // --- 1. 공통 컴포넌트(헤더, 사이드바) 로드 ---
+    // 모든 load 경로 앞에 ./ 추가
     $('#header-container').load('./header/header.html');
     $('#sidebar-container').load('./side-bar/sidebar.html', function() {
-        // 사이드바 로드가 완료된 후, 내부 링크에 클릭 이벤트를 설정
         $('#sidebar-container a').on('click', function(e) {
             e.preventDefault();
+            // href 속성은 상대적이므로 그대로 둡니다.
             loadContent($(this).attr('href'));
         });
     });
@@ -34,7 +35,7 @@ $(document).ready(function() {
     });
 
     // --- 3. 초기 페이지 로드 ---
-    loadContent('my-info.html');
+    loadContent('./my-info.html');
 });
 
 /**
