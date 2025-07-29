@@ -1,71 +1,92 @@
-/* styles.css */
+/* 기본 스타일 */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #757575; /* 어두운 배경 */
-    color: #ffffff;
+    transition: margin-left 0.3s ease-in-out; /* 콘텐츠 영역 이동 애니메이션 */
 }
 
+/* 토글 버튼 */
+#menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001; /* 사이드바보다 위에 표시 */
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+/* 사이드바 */
 .sidebar {
     position: fixed;
-    top: 50px; /* 화면 위에서 약간 떨어짐 */
-    left: 10px; /* 화면 왼쪽에서 떨어짐 */
-    width: 100px; /* 기본 너비 (축소 상태) */
-    height: 80%; /* 사이드바 높이 */
-    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
-    border-radius: 20px; /* 둥근 모서리 */
-    overflow: hidden; /* 내부 콘텐츠 숨김 */
-    transition: width 0.3s ease-in-out; /* 너비 애니메이션 */
+    top: 0;
+    left: 0;
+    width: 250px; /* 확장 시 너비 */
+    height: 100%;
+    background-color: #222;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-.sidebar:hover {
-    width: 250px; /* 마우스 호버 시 너비 확장 */
-}
-
+/* 메뉴 리스트 */
 .menu {
     list-style: none;
-    padding: 20px;
+    padding: 60px 0 0 0; /* 토글 버튼 공간 확보 */
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
-.menu li {
-    margin: 15px 0;
-    width: 100%;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
+.menu li a {
     display: flex;
     align-items: center;
-    border-radius: 50px; /* 원형 아이콘 디자인 */
-    transition: background-color 0.3s, color 0.3s;
-    position: relative;
-}
-
-.menu a .icon {
-    font-size: 18px;
-    margin-right: 10px; /* 텍스트와 아이콘 간격 */
-}
-
-.menu a::after {
-    content: attr(data-label); /* 숨겨진 텍스트 */
-    opacity: 0; /* 기본 상태에서 숨김 */
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.menu li a:hover {
+    background-color: #575757;
+}
+
+.menu .icon {
+    font-size: 22px;
+    min-width: 40px; /* 아이콘 영역 고정 */
+    text-align: center;
+}
+
+.menu .label {
+    margin-left: 15px;
+    font-weight: bold;
+    opacity: 1; /* 기본적으로 보이게 설정 */
     transition: opacity 0.3s ease-in-out;
-    margin-left: 10px; /* 아이콘 뒤에 여백 */
 }
 
-.sidebar:hover .menu a::after {
-    opacity: 1; /* 호버 시 텍스트 표시 */
+
+/* === 축소 상태 === */
+.sidebar.collapsed {
+    width: 80px; /* 축소 시 너비 */
 }
 
-.menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* 호버 효과 */
+.sidebar.collapsed .label {
+    opacity: 0; /* 텍스트 숨기기 */
+    width: 0;
+    overflow: hidden;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+    margin-left: 250px; /* 사이드바 너비만큼 왼쪽 여백 */
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* 사이드바 축소 시 메인 콘텐츠 여백 조정 */
+.sidebar.collapsed + .main-content {
+    margin-left: 80px;
 }

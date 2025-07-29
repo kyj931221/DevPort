@@ -1,23 +1,109 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>김깜냥의 콘텐츠 테이블</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script> <!-- JavaScript 파일 연결 -->
-    <script src="./content-table/content-table.js"></script> <!-- JavaScript 파일 연결 -->
+<div id='content-table'>
+    <h1><span class="blue">&lt;</span>CONTENT<span class="blue">&gt;</span> <span class="yellow">TABLES</span></h1>
+    <h2>My GitHub Profile. <a href="https://github.com/kyj931221" target="_blank">kyj931221</a></h2>
+    <div id="row-count"></div> <!-- 행 개수를 출력할 div -->
 
-    <link rel="stylesheet" href="side-bar/sidebar.css">
-    <link rel="stylesheet" href="content-table/content-table.css">
-    <link rel="stylesheet" href="header/header.css">
-</head>
-<body>
-<!-- 사이드바 -->
-<div id="sidebar"></div>
-<!-- 헤더 -->
-<div id="header"></div>
-<!-- 게임 리스트 -->
-<div id="content-table"></div>
+    <table class="container">
+        <thead>
+        <tr>
+            <th><h1>이름</h1></th>
+            <th><h1>장르</h1></th>
+            <th><h1>개발 엔진</h1></th>
+            <th><h1>유형</h1></th>
+            <th><h1>개발 기간</h1></th>
+            <th><h1>설명</h1></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>그때 갑자기 닌자가 나타났다!</td>
+            <td>아케이드</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.04-2024.05</td>
+            <td>랜덤으로 생성되는 닌자의 공격을 피해 신입 개발자는 프로그램을 업로드 해야합니다!</td>
+        </tr>
+        <tr>
+            <td>달로향하자! : For All Of Us</td>
+            <td>플랫포머</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.05-2024.06</td>
+            <td>움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 빠르게 도달하도록 도전 해보세요!</td>
+        </tr>
+        <tr>
+            <td>AR 지구를지켜라: Protect The Earth</td>
+            <td>AR</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.06-2024.07</td>
+            <td>실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임</td>
+        </tr>
+        <tr>
+            <td>RE.MIND : AR Check List</td>
+            <td>AR</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.06-2024.07</td>
+            <td>AR 이미지 트래킹을 이용한 2D UI 체크리스트 관리 어플리케이션</td>
+        </tr>
+        <tr>
+            <td>함께해요, 어린이 교통안전: AR로 배우는 어린이 교통안전</td>
+            <td>AR</td>
+            <td>Unity5</td>
+            <td>팀 프로젝트</td>
+            <td>2024.06-2024.07</td>
+            <td>음성과 애니메이션을 이용한 AR 이미지 트래킹 어린이 교통안전 콘텐츠</td>
+        </tr>
+        <tr>
+            <td>VR 명작동화 탐험대</td>
+            <td>VR</td>
+            <td>Unity5</td>
+            <td>팀 프로젝트</td>
+            <td>2024.06-2024.10</td>
+            <td>아이들을 위한 교육용 VR 동화 교육 콘텐츠</td>
+        </tr>
+        <tr>
+            <td>Catch You Catch Me</td>
+            <td>AR</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.09-2024.10</td>
+            <td>특별한 장소에서 추억을 기록하고 공유할 수 있는 위치 정보 및 미디어 플레이어 AR 콘텐츠</td>
+        </tr>
+        <tr>
+            <td>The UnScene : Fear Unseen</td>
+            <td>TPS</td>
+            <td>Unity5</td>
+            <td>개인 프로젝트</td>
+            <td>2024.09-2024.10</td>
+            <td>빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임</td>
+        </tr>
+        <tr>
+            <td>트릭컬 팬 게임 : 버터의 즐거운 산책</td>
+            <td>WEB</td>
+            <td>HTML</td>
+            <td>개인 프로젝트</td>
+            <td>2024.05-2024.06</td>
+            <td>트릭컬 팬 게임 : 컨트롤을 통해 버터에게 좋아하는 음식을 먹어 점수를 획득하자!</td>
+        </tr>
+        <tr>
+            <td>트릭컬 팬 게임 : 델리아의 남극탐험</td>
+            <td>WEB</td>
+            <td>HTML</td>
+            <td>개인 프로젝트</td>
+            <td>2024.05-2024.06</td>
+            <td>트릭컬 팬 게임 : 컨트롤을 통해 위에서 내려오는 장애물을 피하고 오른쪽에서 날라오는 아이템을 먹어서 점수를 획득하자!</td>
+        </tr>
+        <tr>
+            <td>김치-런</td>
+            <td>아케이드</td>
+            <td>Unity6</td>
+            <td>Unity6 Challenge</td>
+            <td>2024.12-2024.12</td>
+            <td>유니티 6 챌린지 게임 : 김치 재료를 얻으면서 장애물을 피해 오랫동안 살아남아라!</td>
+        </tr>
 
-</body>
-</html>
+        </tbody>
+    </table>
+</div>

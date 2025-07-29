@@ -513,3 +513,20 @@ label[for=nav-footer-toggle] {
     border-radius: 99px;
     background-color: #D62929;
 }
+
+.popup-notification {
+    position: fixed; /* 화면에 고정 */
+    top: 50px; /* 상단에서 50px 아래에 위치 */
+    left: 50%; /* 화면 중앙으로 이동 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬 */
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 검은색 배경 */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999; /* 다른 모든 요소 위에 표시 */
+    font-weight: bold;
+    opacity: 0; /* 기본적으로 투명하게 숨김 */
+    transition: opacity 0.5s ease-in-out; /* 부드러운 사라짐 효과 */
+    pointer-events: none; /* 팝업 위로 마우스 클릭 안되게 설정 */
+}
