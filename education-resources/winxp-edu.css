@@ -1,0 +1,88 @@
+/* === Windows XP 테마 - 교육 자료 페이지 === */
+body {
+    background: #ECE9D8;
+    font-family: "Tahoma", "Gulim", sans-serif;
+    color: #000;
+    margin: 8px;
+}
+
+.window-container {
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #4D4D4D;
+    border-bottom: 2px solid #4D4D4D;
+    padding: 3px;
+    background: #ECE9D8;
+    height: calc(100vh - 22px);
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    background: linear-gradient(to right, #0055E3, #3B8CFD);
+    padding: 4px 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 1px 1px #000;
+}
+
+.window-content {
+    padding: 15px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.filter-bar input, .filter-bar select {
+    padding: 5px;
+    border: 1px solid #808080;
+    font-family: "Tahoma", sans-serif;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.winxp-card {
+    background: #F5F5F5;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    padding: 8px;
+    text-align: center;
+}
+
+.winxp-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border: 1px solid #B5B5B5;
+    background: white;
+    margin-bottom: 8px;
+}
+
+.winxp-card h3 {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+}
+
+.winxp-button {
+    width: 100%;
+    padding: 5px;
+    background-color: #ECE9D8;
+    border: 1px outset #FFFFFF;
+    font-size: 12px;
+    cursor: pointer;
+}
+.winxp-button:active {
+    border-style: inset;
+}

@@ -1,479 +1,147 @@
-<div class="game-library">
-    <h1>GAME LIBRARY</h1>
+<div class="window-header">
+    콘텐츠 (Content)
+</div>
 
-    <div class="search-container">
-        <input type="text" class="search-input" placeholder="게임 또는 태그 검색..."/>
-        <button class="search-button">SEARCH</button>
+<div class="window-content">
+    <div style="display: flex; gap: 8px; margin-bottom: 20px; max-width: 500px; align-items: center;">
+        <input type="text" class="search-input" placeholder="게임 또는 태그 검색..." style="flex-grow: 1; padding: 5px; border: 1px solid #808080; height: 28px;">
+        <button class="winxp-button search-button" style="width: 80px;">검색</button>
+        <a href="./education-resources/edu-resources.html" class="winxp-button" style="width: 120px; line-height: 1.8;" target="_blank">교육자료</a>
     </div>
 
-    <div class="search-container">
-        <a href="/DevPort/education-resources/edu-resources.html" class="social-button edu" target="_blank">교육자료 확인하기.</a>
-    </div>
+    <div class="card-grid">
 
-    <!-- 게임 카드 목록 -->
-    <div class="game-grid">
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/그때 갑자기 닌자가 나타났다.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>그때 갑자기 닌자가 나타났다!</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">Arcade</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">3D</span>
-                </div>
-
-                <p class="game-description">랜덤으로 생성되는 닌자의 공격을 피해 달아나는 3D 아케이드 게임.</p>
-
-                <div class="social-links">
-                    <a href="https://github.com/kyj931221/01.Then-a-ninja-suddenly-appeared" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-
-                    <a href="https://youtu.be/Glp0o2QQ7OE?si=fExqanl8VyYq_fqv" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://play.google.com/store/apps/details?id=com.kopo.Dodge&pcampaignid=web_share" class="play-button" data-game-url="games/game-url.html">Android</a>
-                    <a href="https://kyj931221.github.io/Web_Ninja/" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/그때 갑자기 닌자가 나타났다.png" alt="게임 이미지">
+            <h3>그때 갑자기 닌자가 나타났다!</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">Arcade</span><span class="tag">Unity5</span>
             </div>
+            <p>랜덤으로 생성되는 닌자의 공격을 피해 달아나는 3D 아케이드 게임.</p>
+            <a href="https://github.com/kyj931221/01.Then-a-ninja-suddenly-appeared" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://kyj931221.github.io/Web_Ninja/" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/달로 향하자.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>달로 향하자!</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">Platformer</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">2D</span>
-                </div>
-
-                <p class="game-description">움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 빠르게 도달하도록 도전 해보세요!</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/02.for-all-of-us" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/9kRKZsyv2NQ?si=bR8zD_1J62b1GhE5" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Android</a>
-                    <a href="https://kyj931221.github.io/WEB_for_all_of_us/" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/달로 향하자.png" alt="게임 이미지">
+            <h3>달로 향하자!</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">Platformer</span><span class="tag">Unity5</span>
             </div>
+            <p>움직이는 발판, 보이지 않는 발판, 함정을 피해 목표에 빠르게 도달하도록 도전 해보세요!</p>
+            <a href="https://github.com/kyj931221/02.for-all-of-us" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://kyj931221.github.io/WEB_for_all_of_us/" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/지구를 지켜라.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>AR 지구를지켜라: Protect The Earth</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">AR</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">3D</span>
-                </div>
-
-                <p class="game-description">실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/03.Protect-the-Earth" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/q4wvyRo7qEI?si=TVskTB62gCJ8WegA" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://play.google.com/store/apps/details?id=com.KimYoungJun.ProtecttheEarth&pcampaignid=web_share" class="play-button" data-game-url="games/game-url.html">Android</a>
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/지구를 지켜라.png" alt="게임 이미지">
+            <h3>AR 지구를지켜라</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">AR</span><span class="tag">Unity5</span>
             </div>
+            <p>실감나는 연출, 음악, 운석을 파괴하는 스마트폰 AR 슈팅 게임.</p>
+            <a href="https://github.com/kyj931221/03.Protect-the-Earth" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://play.google.com/store/apps/details?id=com.KimYoungJun.ProtecttheEarth" class="winxp-button" target="_blank">Android</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/Re_mind_logo.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>RE.MIND : AR Check List</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">AR</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">Image Tracking</span>
-                </div>
-
-                <p class="game-description">AR 이미지 트래킹을 이용한 2D UI 체크리스트 관리 어플리케이션</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/04.ARC" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/rV8lyufHbgM?si=9YweW0NJRA-h_WnZ" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Android</a>
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/Re_mind_logo.png" alt="게임 이미지">
+            <h3>RE.MIND : AR Check List</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">AR</span><span class="tag">Unity5</span>
             </div>
+            <p>AR 이미지 트래킹을 이용한 2D UI 체크리스트 관리 어플리케이션.</p>
+            <a href="https://github.com/kyj931221/04.ARC" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="#" class="winxp-button coming-soon-btn">Android</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/함께해요 어린이 교통안전.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>함께해요, 어린이 교통안전: AR로 배우는 어린이 교통안전</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">팀</span>
-                    <span class="tag blue">AR</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">Image Tracking</span>
-                    <span class="tag blue">교육자료</span>
-                </div>
-
-                <p class="game-description">음성과 애니메이션을 이용한 AR 이미지 트래킹 어린이 교통안전 콘텐츠, 교육자료를 확인해주세요!</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/Children-s-Safety-AR" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/4vkbCIt_f50?si=UkA9bpS6j45rW2es" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://drive.google.com/file/d/1eVjzHhAcVTn-kAWRACZE61ZJlOKsZZVV/view?usp=sharing" class="play-button" data-game-url="games/game-url.html">APK 다운로드</a>
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/함께해요 어린이 교통안전.png" alt="게임 이미지">
+            <h3>함께해요, 어린이 교통안전</h3>
+            <div class="tags">
+                <span class="tag">팀</span><span class="tag">AR</span><span class="tag">교육</span>
             </div>
+            <p>AR 이미지 트래킹 어린이 교통안전 콘텐츠. 교육자료를 확인해주세요!</p>
+            <a href="https://github.com/kyj931221/Children-s-Safety-AR" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://drive.google.com/file/d/1eVjzHhAcVTn-kAWRACZE61ZJlOKsZZVV/view?usp=sharing" class="winxp-button" target="_blank">APK</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/VR 명작 동화.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>VR 명작동화 탐험대</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">팀</span>
-                    <span class="tag blue">VR</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Meta</span>
-                    <span class="tag blue">PC</span>
-                </div>
-
-                <p class="game-description">아이들을 위한 교육용 VR 동화 교육 콘텐츠</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/ICT_Project" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/9f-Qh_hm4RQ?si=NFQiddgvjhyv45Pu" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="/DevPort/Detailed Page/202401_vr_ict.html" class="social-button qa" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Android</a>
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/VR 명작 동화.png" alt="게임 이미지">
+            <h3>VR 명작동화 탐험대</h3>
+            <div class="tags">
+                <span class="tag">팀</span><span class="tag">VR</span><span class="tag">교육</span>
             </div>
+            <p>아이들을 위한 교육용 VR 동화 교육 콘텐츠.</p>
+            <a href="https://github.com/kyj931221/ICT_Project" class="winxp-button" target="_blank">GitHub</a>
+            <a href="./Detailed Page/202401_vr_ict.html" class="winxp-button" target="_blank">GDD</a>
+            <a href="#" class="winxp-button coming-soon-btn">Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/Catch You Catch Me.jpg" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>Catch You Catch Me</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">AR</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">Android</span>
-                    <span class="tag blue">GPS</span>
-                    <span class="tag blue">Firebase</span>
-                </div>
-
-                <p class="game-description">특별한 장소에서 추억을 기록하고 공유할 수 있는 위치 정보 및 미디어 플레이어 AR 콘텐츠</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/ARDC_Play_Memory" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtube.com/shorts/q-FsHx9qLf8?si=g2H0sQQX1XwTPEXB" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Android</a>
-                    <a href="#" class="play-button coming-soon-btn" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/Catch You Catch Me.jpg" alt="게임 이미지">
+            <h3>Catch You Catch Me</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">AR</span><span class="tag">GPS</span>
             </div>
+            <p>특별한 장소에서 추억을 기록하고 공유할 수 있는 위치 정보 및 미디어 플레이어 AR 콘텐츠.</p>
+            <a href="https://github.com/kyj931221/ARDC_Play_Memory" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="#" class="winxp-button coming-soon-btn">Android</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/The UnScene.jpg" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>The UnScene : Fear Unseen</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">TPS</span>
-                    <span class="tag blue">Unity5</span>
-                    <span class="tag blue">PC</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">공포</span>
-                </div>
-
-                <p class="game-description">빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/TPS_Horror-game_UnSecne" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="https://youtu.be/KLLUYLJmKxU?si=xdkKcFROWnW9RgZW" class="social-button youtube" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://kyj931221.github.io/Web_UnScene/" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/The UnScene.jpg" alt="게임 이미지">
+            <h3>The UnScene : Fear Unseen</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">TPS</span><span class="tag">공포</span>
             </div>
+            <p>빛으로 몬스터의 존재를 밝히고, 지우는 3인칭 TPS 공포게임.</p>
+            <a href="https://github.com/kyj931221/TPS_Horror-game_UnSecne" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://kyj931221.github.io/Web_UnScene/" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/game-title.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>트릭컬 팬 게임 : 버터의 즐거운 산책</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">Arcade</span>
-                    <span class="tag blue">HTML</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">팬</span>
-                </div>
-
-                <p class="game-description">트릭컬 팬 게임 : 컨트롤을 통해 버터에게 좋아하는 음식을 먹어 점수를 획득하자!</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/trickcal_fan_game_01" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="#" class="social-button youtube coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://kyj931221.github.io/trickcal_fan_game_01/IntroScene.html" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/game-title.png" alt="게임 이미지">
+            <h3>트릭컬 팬 게임 : 버터의 즐거운 산책</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">Web</span><span class="tag">팬게임</span>
             </div>
+            <p>트릭컬 팬 게임 : 컨트롤을 통해 버터에게 좋아하는 음식을 먹어 점수를 획득하자!</p>
+            <a href="https://github.com/kyj931221/trickcal_fan_game_01" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://kyj931221.github.io/trickcal_fan_game_01/IntroScene.html" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/델리아의 남극탐험.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>트릭컬 팬 게임 : 델리아의 남극탐험</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">Arcade</span>
-                    <span class="tag blue">HTML</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">팬</span>
-                </div>
-
-                <p class="game-description">트릭컬 팬 게임 : 컨트롤을 통해 위에서 내려오는 장애물을 피하고 오른쪽에서 날라오는 아이템을 먹어서 점수를 획득하자!</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/Polytechnics-Team-One/Antarctic-exploration" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="#" class="social-button youtube coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://polytechnics-team-one.github.io/Antarctic-exploration/" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/델리아의 남극탐험.png" alt="게임 이미지">
+            <h3>트릭컬 팬 게임 : 델리아의 남극탐험</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">Web</span><span class="tag">팬게임</span>
             </div>
+            <p>트릭컬 팬 게임 : 위에서 내려오는 장애물을 피하고 아이템을 먹어서 점수를 획득하자!</p>
+            <a href="https://github.com/Polytechnics-Team-One/Antarctic-exploration" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://polytechnics-team-one.github.io/Antarctic-exploration/" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
-        <!-- 카드 목록 범위 시작 -->
-        <div class="game-card">
-            <img src="/DevPort/game_Image/김치런.png" alt="Space Explorer" class="game-image">
-            <div class="game-info">
-                <h2>유니티6 챌린지 : 김치-런</h2>
-
-                <div class="game-tags">
-                    <span class="tag blue">개인</span>
-                    <span class="tag blue">Arcade</span>
-                    <span class="tag blue">Unity6</span>
-                    <span class="tag blue">Web</span>
-                    <span class="tag blue">Challenge</span>
-                </div>
-
-                <p class="game-description">유니티6 챌린지 : 오랜 시간 동안 김치 재료 아이템을 획득하여 장애물을 피해 살아남아라!</p>
-
-                <div class="social-links">
-                    <!-- 깃허브 -->
-                    <a href="https://github.com/kyj931221/Kimchi-run" class="social-button github" target="_blank">
-                        <img src="/DevPort/icon/git.png" alt="GitHub">
-                        GitHub
-                    </a>
-                    <!-- 유튜브 -->
-                    <a href="#" class="social-button youtube coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/youtube.png" alt="YouTube">
-                        YouTube
-                    </a>
-                    <!-- Game Design Document -->
-                    <a href="#" class="social-button qa coming-soon-btn" target="_blank">
-                        <img src="/DevPort/icon/word.png" alt="QA">
-                        GDD
-                    </a>
-                </div>
-
-                <div class="button-container">
-                    <a href="https://play.unity.com/en/games/3825e42d-cbc9-4a44-bce6-f6e832feb8ab/webgl-builds" class="play-button" data-game-url="games/game-url.html">Web Play</a>
-                </div>
+        <div class="winxp-card">
+            <img src="./game_Image/김치런.png" alt="게임 이미지">
+            <h3>유니티6 챌린지 : 김치-런</h3>
+            <div class="tags">
+                <span class="tag">개인</span><span class="tag">Arcade</span><span class="tag">Unity6</span>
             </div>
+            <p>유니티6 챌린지 : 오랜 시간 동안 김치 재료 아이템을 획득하여 장애물을 피해 살아남아라!</p>
+            <a href="https://github.com/kyj931221/Kimchi-run" class="winxp-button" target="_blank">GitHub</a>
+            <a href="#" class="winxp-button coming-soon-btn">GDD</a>
+            <a href="https://play.unity.com/en/games/3825e42d-cbc9-4a44-bce6-f6e832feb8ab" class="winxp-button" target="_blank">Web Play</a>
         </div>
-        <!-- 카드 목록 범위 끝 -->
 
     </div>
-
 </div>

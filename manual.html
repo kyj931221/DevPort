@@ -1,0 +1,35 @@
+<div class="window-header">
+  프로젝트 설명서 (Project Manual)
+</div>
+
+<div class="window-content manual-content"> <h2>'DevPort' 포트폴리오 프로젝트 설명서</h2>
+
+  <h3>1. 프로젝트 개요</h3>
+  <p>이 프로젝트는 개인 포트폴리오를 독창적인 <strong>Windows XP 테마</strong>로 구현한 인터랙티브 웹사이트입니다. SPA(Single Page Application)와 유사한 방식으로 동작하여, 페이지 전체를 새로고침하지 않고 필요한 부분만 동적으로 불러와 부드러운 사용자 경험을 제공하는 것이 특징입니다.</p>
+  <ul>
+    <li><strong>대문 페이지 (`index.html`):</strong> Windows XP의 '환영합니다' 화면을 테마로 하여 포트폴리오에 입장하는 경험을 제공합니다.</li>
+    <li><strong>메인 페이지 (`main.html`):</strong> XP의 바탕화면, 작업 표시줄, 시작 메뉴 인터페이스를 구현한 핵심 페이지입니다.</li>
+  </ul>
+
+  <h3>2. HTML-CSS-JS 연결 흐름 (동작 원리)</h3>
+  <p>사용자가 사이트에 접속해서 메뉴를 클릭하기까지의 과정은 아래와 같습니다.</p>
+  <ol>
+    <li><strong>최초 접속 (`index.html`):</strong> 사용자는 사이트 주소로 접속하여 `index.html`을 가장 먼저 봅니다. 브라우저는 `winxp-welcome.css`를 불러와 XP 환영합니다 화면 스타일을 적용합니다.</li>
+    <li><strong>입장하기 (`main.html` 로딩):</strong> 사용자가 '입장하기' 버튼을 클릭하면, `main.html` 페이지로 이동합니다.</li>
+    <li><strong>스크립트 실행 (`scripts.js`):</strong> `main.html`과 연결된 `winxp-styles.css`와 `scripts.js`가 실행됩니다. `scripts.js`는 `sidebar.html`을 시작 메뉴에 불러오고, 초기 콘텐츠로 `my-info.html`을 메인 창에 표시합니다.</li>
+    <li><strong>메뉴 클릭 및 콘텐츠 교체:</strong> 사용자가 시작 메뉴의 링크를 클릭하면, `scripts.js`의 `loadContent` 함수가 호출되어 페이지 새로고침 없이 메인 창의 내용만 해당 HTML 조각 파일로 교체합니다.</li>
+  </ol>
+
+  <h3>3. 향후 유지보수를 위한 가이드</h3>
+  <ul>
+    <li><strong>페이지 내용 수정:</strong> 각 메뉴에 해당하는 HTML '콘텐츠 조각' 파일(`my-info.html` 등)만 열어서 수정하면 됩니다.</li>
+    <li><strong>전체 디자인 수정:</strong> `main.html`과 모든 콘텐츠의 통일된 디자인을 바꾸려면 <strong>`winxp-styles.css`</strong> 파일 하나만 수정하면 됩니다.</li>
+    <li><strong>새로운 페이지 추가:</strong>
+      <ol>
+        <li>새로운 HTML 조각 파일을 만듭니다.</li>
+        <li>`side-bar/sidebar.html` 파일을 열어 메뉴 링크를 추가합니다.</li>
+        <li>새 페이지에만 필요한 기능이 있다면, `scripts.js`의 `loadContent` 함수 안에 조건을 추가하여 처리할 수 있습니다.</li>
+      </ol>
+    </li>
+  </ul>
+</div>

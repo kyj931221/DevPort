@@ -51,24 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
         resourceGrid.innerHTML = '';
         filteredResources.forEach(resource => {
             const card = document.createElement('div');
-            card.classList.add('resource-card');
+            card.classList.add('winxp-card');
+            // 새로운 HTML 구조로 변경
             card.innerHTML = `
-                <img src="${resource.thumbnail}" alt="${resource.title}">
-                <div class="resource-card-content">
-                    <h3>${resource.title}</h3>
-                    <div class="app-info">
-                        <div class="app-tag">
-                            <div class="tag-icon">📱</div>
-                            <div class="tag-text">${resource.appName}</div>
-                        </div>
-                        <div class="category-tag">
-                            <div class="tag-icon">🏷️</div>
-                            <div class="tag-text">${resource.category}</div>
-                        </div>
-                    </div>
-                </div>
-                <button onclick="openImage('${resource.fileUrl}')">이미지 보기</button>
-            `;
+            <img src="${resource.thumbnail}" alt="${resource.title}" style="cursor: pointer;" onclick="openImage('${resource.fileUrl}')">
+            <h3>${resource.title}</h3>
+            <button class="winxp-button" onclick="openImage('${resource.fileUrl}')">이미지 보기</button>
+        `;
             resourceGrid.appendChild(card);
         });
     }

@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교육 자료 다운로드</title>
-    <link rel="stylesheet" href="edu-resources.css">
+    <title>교육 자료</title>
+    <link rel="stylesheet" href="winxp-edu.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>교육 자료 라이브러리</h1>
-        <p>앱에서 사용 가능한 자료들을 쉽게 찾고 볼 수 있습니다</p>
-    </header>
 
-    <div class="search-section">
-        <input type="text" id="searchInput" placeholder="앱 이름 또는 자료 검색...">
-        <select id="categoryFilter">
-            <option value="all">전체 카테고리</option>
-            <option value="AR 어린이 교통안전">AR 어린이 교통안전</option>
-        </select>
-    </div>
-
-    <p style="text-align: center; color: red">이미지나 파일을 다운받거나 크게 확인할 수 있습니다.</p>
-
-    <div id="resourceGrid" class="resource-grid">
-        <!-- 자료 목록은 JavaScript로 동적 생성 -->
+<div class="window-container">
+    <div class="window-header">교육 자료 라이브러리</div>
+    <div class="window-content">
+        <div class="filter-bar">
+            <input type="text" id="searchInput" placeholder="자료 검색...">
+            <select id="categoryFilter">
+                <option value="all">전체 카테고리</option>
+                <option value="AR 어린이 교통안전">AR 어린이 교통안전</option>
+            </select>
+        </div>
+        <p style="text-align: center; font-size: 12px; margin-bottom: 15px;">이미지를 클릭하면 원본을 보거나 다운로드할 수 있습니다.</p>
+        <div id="resourceGrid" class="card-grid">
+        </div>
     </div>
 </div>
 

@@ -2,62 +2,79 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
-    <link rel="stylesheet" href="profile.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>환영합니다</title>
+    <link rel="stylesheet" href="winxp-welcome.css">
 </head>
 <body>
-<div class="wrapper">
-    <div class="img-area">
-        <div class="inner-area">
-            <img src="https://avatars.githubusercontent.com/u/29942300?s=400&u=a26fe2bf3452fad7c2716dcc592aa33a2ffc3c70&v=4">
-        </div>
-    </div>
 
-    <div class="icon dots" onclick="togglePanel('right')"></div>
+<div id="shutdown-overlay"></div>
 
-    <div class="name">KIM YOUNG JUN</div>
-    <div class="about">Developer</div>
-    <div class="social-icons">
-        <a href="#" class="git" onclick="location.href='https://github.com/kyj931221'"><img
-                src="./icon/git.png"></i></a>
-        <a href="#" class="Notion" onclick="location.href='https://glitter-stilton-332.notion.site/MY-CONTENTS-dc9e46e4b03643da8fdfe36599ae934b?pvs=4'"><img
-                src="./icon/notion.png"></i></a>
-        <a href="#" class="tistory" onclick="location.href='https://kyj931221.tistory.com/'"><img
-                src="./icon/티스토리.png"/></a>
-        <a href="#" class="youtube" onclick="location.href='https://www.youtube.com/@%EA%B9%80%EC%98%81%EC%A4%80-l2z'"><img
-                src="./icon/youtube.png"/></a>
-        <a href="mailto:kyj931221@gmail.com"><img src="./icon/email.png"/></a>
-    </div>
-    <div class="buttons">
-        <button onclick="location.href='main.html'">입장하기</button>
-    </div>
-
+<div id="lockscreen-container">
+    <div id="lockscreen-time">12:00</div>
+    <div id="lockscreen-date">2025년 1월 1일</div>
 </div>
 
-<!-- 사이드 패널 -->
-<div id="rightPanel" class="side-panel">
-    <div class="tabs">
-        <!-- 탭 버튼 -->
-        <button class="tab-button active" onclick="showTab('resumeTab')">이력서</button>
-        <button class="tab-button" onclick="showTab('portfolioTab')">포트폴리오</button>
+<div class="welcome-container">
+    <div class="welcome-left">
+        <img src="icon/Menu_Logo.png" alt="Logo">
+        <p>시작하려면 사용자 이름을 클릭하십시오.</p>
     </div>
-
-    <!-- 탭 컨텐츠 -->
-    <div id="resumeTab" class="tab-content active">
-        <h2>이력서</h2>
-        <p>여기에 이력서 내용이 표시됩니다.</p>
-        <iframe src="" frameborder="0" style="width:100%; height:400px;"></iframe>
-    </div>
-
-    <div id="portfolioTab" class="tab-content">
-        <h2>포트폴리오</h2>
-        <p>여기에 포트폴리오 내용이 표시됩니다.</p>
-        <iframe src="" frameborder="0" style="width:100%; height:400px;"></iframe>
+    <div class="welcome-right">
+        <a href="main.html" class="user-tile">
+            <div class="user-icon-box">
+                <img src="https://avatars.githubusercontent.com/u/29942300?v=4" alt="User Avatar">
+            </div>
+            <span class="user-name">kyj931221</span>
+        </a>
     </div>
 </div>
 
-<script src="profile.js"></script> <!-- JavaScript 파일 연결 -->
+<div class="welcome-footer">
+    <button class="turn-off-btn" onclick="shutdown()">
+        <img src="icon/Menu_Logo.png" alt="Turn Off">
+        <span>다음에 또 만나기</span>
+    </button>
+    <div class="footer-text">
+        이름을 클릭하면 다음 페이지로 이동합니다.
+    </div>
+</div>
+
+<script>
+    function updateDateTime() {
+        const timeElement = document.getElementById('lockscreen-time');
+        const dateElement = document.getElementById('lockscreen-date');
+        const now = new Date();
+
+        // 시간 포맷 (예: 14:05)
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        timeElement.textContent = `${hours}:${minutes}`;
+
+        // 날짜 포맷 (예: 3월 6일 월요일)
+        const month = now.toLocaleString('ko-KR', { month: 'long' });
+        const day = now.toLocaleString('ko-KR', { day: 'numeric' });
+        const weekday = now.toLocaleString('ko-KR', { weekday: 'long' });
+        dateElement.textContent = `${month} ${day} ${weekday}`;
+    }
+
+    // 화면 끄기 함수
+    function shutdown() {
+        const overlay = document.getElementById('shutdown-overlay');
+        overlay.style.opacity = '1';
+
+        // 1.6초 후에 실제로 창을 닫습니다. (CSS의 transition 시간 1.5초보다 약간 길게)
+        setTimeout(function() {
+            window.close();
+        }, 1600);
+    }
+
+    // 1초마다 시간을 업데이트합니다.
+    setInterval(updateDateTime, 1000);
+    // 페이지가 열리자마자 바로 표시합니다.
+    updateDateTime();
+</script>
+
+<img src="./icon/Char.png" alt="캐릭터" class="bottom-right-character">
 
 </body>
 </html>
