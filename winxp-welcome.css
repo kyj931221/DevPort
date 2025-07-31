@@ -188,3 +188,75 @@ body {
 .bottom-right-character:hover {
     transform: translateY(-10px); /* 마우스를 올리면 살짝 위로 이동 */
 }
+
+/* === 반응형 디자인을 위한 미디어 쿼리 (추가) === */
+
+/* 태블릿 사이즈 (가로 820px 이하) */
+@media (max-width: 820px) {
+    .welcome-container {
+        width: 90%; /* 너비를 800px 고정에서 90%로 변경 */
+        flex-direction: column; /* 세로로 쌓이도록 변경 */
+        padding: 20px;
+    }
+
+    .welcome-left {
+        text-align: center; /* 로고와 텍스트 중앙 정렬 */
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    #lockscreen-container {
+        left: 20px;
+        bottom: auto; /* 하단 기준 위치 해제 */
+        top: 20px; /* 상단 기준으로 변경 */
+    }
+
+    #lockscreen-time {
+        font-size: 5rem; /* 시계 크기 축소 */
+    }
+
+    #lockscreen-date {
+        font-size: 1.5rem; /* 날짜 크기 축소 */
+    }
+
+    .bottom-right-character {
+        width: 120px; /* 캐릭터 크기 축소 */
+        right: 15px;
+        bottom: 50px;
+    }
+
+    .welcome-footer {
+        flex-direction: column; /* 푸터 내용을 세로로 쌓음 */
+        height: auto;
+        padding: 10px;
+    }
+}
+
+/* 모바일 사이즈 (가로 480px 이하) */
+@media (max-width: 480px) {
+    .welcome-left img {
+        width: 150px; /* 로고 이미지 크기 축소 */
+    }
+
+    #lockscreen-time {
+        font-size: 3.5rem; /* 시계 크기 더 축소 */
+    }
+
+    #lockscreen-date {
+        font-size: 1.1rem; /* 날짜 크기 더 축소 */
+    }
+
+    .user-name {
+        font-size: 18px; /* 사용자 이름 크기 축소 */
+    }
+
+    .bottom-right-character {
+        width: 90px; /* 캐릭터 크기 더 축소 */
+        right: 10px;
+        bottom: 80px; /* 푸터가 길어져서 위치 조정 */
+    }
+
+    .footer-text {
+        font-size: 11px; /* 푸터 텍스트 크기 축소 */
+    }
+}
