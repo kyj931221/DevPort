@@ -275,8 +275,9 @@ h3 { font-size: 1.4rem; margin-top: 30px; color: var(--text-primary); }
     -webkit-backdrop-filter: blur(20px);
     border-radius: 20px;
     border: 1px solid var(--panel-border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* 그림자도 밝은 톤으로 */
-    transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 부드러운 효과 */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2000;
     z-index: 2000;
 }
 #right-viewer-panel.open {
@@ -284,22 +285,28 @@ h3 { font-size: 1.4rem; margin-top: 30px; color: var(--text-primary); }
 }
 #viewer-close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    background: rgba(0, 0, 0, 0.1); /* 닫기 버튼 배경색도 밝게 */
-    color: var(--text-primary); /* 닫기 버튼 텍스트도 밝게 */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
+    top: 50%; /* 세로 중앙 정렬 */
+    left: -20px; /* 패널 왼쪽에 살짝 걸치도록 조정 */
+    transform: translateY(-50%); /* 정확한 세로 중앙 정렬 */
+    width: 40px; /* 버튼 너비 확장 */
+    height: 40px; /* 버튼 높이 확장 */
+    background: var(--panel-background); /* 패널 배경과 동일하게 */
+    color: var(--text-primary); /* 텍스트 색상 통일 */
+    border: 1px solid var(--panel-border); /* 패널 테두리와 동일하게 */
+    border-radius: 50%; /* 원형 유지 */
     font-weight: bold;
+    font-size: 20px; /* 화살표 크기 키움 */
+    line-height: 38px; /* 텍스트 세로 중앙 정렬 */
+    text-align: center; /* 텍스트 가로 중앙 정렬 */
     cursor: pointer;
     z-index: 2001;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 그림자 추가 */
 }
 #viewer-close-btn:hover {
-    background: rgba(0, 0, 0, 0.15);
-    transform: scale(1.1);
+    background: var(--hover-background); /* 호버 시 밝게 */
+    color: var(--text-primary);
+    transform: translateY(-50%) scale(1.1); /* 호버 시 살짝 커지도록 */
 }
 #right-viewer-panel iframe {
     width: 100%;
