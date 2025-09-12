@@ -1,0 +1,309 @@
+/* === 안드로이드 XR 공간 UI 테마 (색상 변경) === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    /* 새로운 색상 팔레트 (이미지 기반) */
+    --panel-background: rgba(255, 255, 255, 0.4); /* 흰색 기반의 반투명 패널 */
+    --panel-border: rgba(255, 255, 255, 0.7);    /* 밝은 테두리 */
+    --text-primary: #333344;                     /* 진한 글씨색 */
+    --text-secondary: #666677;                   /* 부드러운 글씨색 */
+    --accent-glow: rgba(180, 100, 255, 0.5);     /* 보라빛 강조 그림자/광택 */
+    --hover-background: rgba(255, 255, 255, 0.6); /* 호버 시 더 밝아지는 배경 */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* 배경은 이미지와 유사한 부드러운 파스텔 톤 */
+    background: linear-gradient(to top right, #e0eafc, #cfdef3);
+    color: var(--text-primary);
+    overflow: hidden;
+    line-height: 1.7;
+}
+
+/* 동적 공간 배경 (이미지 배경과 유사하게 조정) */
+.spatial-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vh;
+    transform: translate(-50%, -50%);
+    /* 이미지와 유사한 부드러운 그라데이션 */
+    background: radial-gradient(circle at 70% 30%, #f0f4ff 0%, #d8e2ff 40%, #c7d2e0 100%);
+    animation: background-breathing 25s ease-in-out infinite; /* 애니메이션 속도 조정 */
+    z-index: -2; /* 배경이 더 뒤로 가도록 */
+}
+
+@keyframes background-breathing {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+}
+
+/* 이하 기존 스타일 유지 (패널, 독, 카드 등) */
+
+/* 왼쪽 플로팅 네비게이션 독 */
+.spatial-dock {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+.dock-item {
+    width: 50px;
+    height: 50px;
+    background: var(--panel-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--panel-border);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary); /* 아이콘 색상도 변경 */
+    font-size: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 그림자도 밝은 톤으로 */
+}
+.dock-item:hover {
+    transform: translateX(10px) scale(1.1);
+    background: var(--hover-background);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+.dock-item .label {
+    position: absolute;
+    left: 120%;
+    padding: 8px 15px;
+    background: var(--text-primary); /* 레이블 배경색도 변경 */
+    color: white; /* 레이블 텍스트는 흰색으로 */
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.dock-item:hover .label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 메인 콘텐츠 패널 */
+#main-content {
+    position: absolute;
+    top: 4vh;
+    left: 110px; /* 사이드바 독과의 간격 유지 */
+    right: 4vh;
+    bottom: 4vh;
+    background: var(--panel-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid var(--panel-border);
+    padding: 30px 40px;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1); /* 그림자도 밝은 톤으로 */
+}
+
+/* 스크롤바 스타일 */
+#main-content::-webkit-scrollbar { width: 8px; }
+#main-content::-webkit-scrollbar-track { background: transparent; }
+#main-content::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); border-radius: 4px; } /* 스크롤바도 밝게 */
+#main-content::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.3); }
+
+/* 콘텐츠 내부 공통 스타일 */
+.content-header {
+    font-size: 2.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 헤더 아래 선도 밝게 */
+    padding-bottom: 15px;
+    margin: 0 0 25px 0;
+    color: var(--text-primary);
+}
+h3 { font-size: 1.4rem; margin-top: 30px; color: var(--text-primary); }
+
+/* 카드 그리드 및 카드 스타일 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+.spatial-card {
+    background: var(--panel-background);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid var(--panel-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 카드 그림자도 밝게 */
+}
+.spatial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: var(--hover-background);
+}
+.spatial-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-primary); }
+.spatial-card p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
+.spatial-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+
+/* 테이블 스타일 */
+.spatial-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.spatial-table th, .spatial-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 테이블 선도 밝게 */
+    text-align: left;
+    color: var(--text-primary);
+}
+.spatial-table th { font-weight: 600; color: var(--text-primary); }
+.spatial-table td { color: var(--text-secondary); }
+.spatial-table tr:hover { background: rgba(255, 255, 255, 0.5); } /* 호버 시 더 밝게 */
+
+/* 버튼 스타일 */
+.spatial-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--panel-background);
+    border: 1px solid var(--panel-border);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.spatial-button:hover {
+    background: var(--hover-background);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* === 하위 메뉴 스타일 (추가) === */
+.submenu-container {
+    position: relative;
+    /* 독 아이템과 동일한 크기와 모양 유지 */
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.submenu-container .submenu-toggle { /* 토글 버튼도 독 아이템처럼 보이게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--panel-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--panel-border);
+    border-radius: 15px;
+    color: var(--text-secondary);
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.submenu-container .submenu-toggle:hover {
+    transform: translateX(10px) scale(1.1);
+    background: var(--hover-background);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.submenu {
+    position: absolute;
+    left: 110%;
+    top: 0;
+    width: 200px;
+    /* 배경을 다른 패널과 동일한 색상 변수로 변경 */
+    background: var(--panel-background);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid var(--panel-border);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    z-index: 101;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.submenu-container.open > .submenu {
+    display: block;
+}
+.submenu li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 8px;
+}
+.submenu li a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+.submenu.submenu-up {
+    top: auto;
+    bottom: 0;
+}
+
+
+/* === 오른쪽 뷰어 패널 스타일 (추가) === */
+#right-viewer-panel {
+    position: fixed;
+    top: 4vh;
+    right: -65%; /* 기본적으로 화면 오른쪽에 숨김 */
+    width: 60%;
+    height: 92vh;
+    background: var(--panel-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* 그림자도 밝은 톤으로 */
+    transition: right 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* 부드러운 효과 */
+    z-index: 2000;
+}
+#right-viewer-panel.open {
+    right: 4vh; /* 오른쪽에서 나타남 */
+}
+#viewer-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.1); /* 닫기 버튼 배경색도 밝게 */
+    color: var(--text-primary); /* 닫기 버튼 텍스트도 밝게 */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: background 0.3s, transform 0.3s;
+}
+#viewer-close-btn:hover {
+    background: rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+}
+#right-viewer-panel iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+}

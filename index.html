@@ -3,78 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>환영합니다</title>
-    <link rel="stylesheet" href="winxp-welcome.css">
+    <link rel="stylesheet" href="spatial-welcome.css">
 </head>
 <body>
 
-<div id="shutdown-overlay"></div>
+<div class="spatial-background"></div>
 
-<div id="lockscreen-container">
-    <div id="lockscreen-time">12:00</div>
-    <div id="lockscreen-date">2025년 1월 1일</div>
-</div>
-
-<div class="welcome-container">
-    <div class="welcome-left">
-        <img src="icon/Menu_Logo.png" alt="Logo">
-        <p>시작하려면 사용자 이름을 클릭하십시오.</p>
+<div class="welcome-panel">
+    <div class="user-icon-box">
+        <img src="https://avatars.githubusercontent.com/u/29942300?v=4" alt="User Avatar">
     </div>
-    <div class="welcome-right">
-        <a href="main.html" class="user-tile">
-            <div class="user-icon-box">
-                <img src="https://avatars.githubusercontent.com/u/29942300?v=4" alt="User Avatar">
-            </div>
-            <span class="user-name">kyj931221</span>
-        </a>
-    </div>
+
+    <h1 class="user-name">kyj931221</h1>
+    <p>포트폴리오에 오신 것을 환영합니다.</p>
+
+    <a href="main.html" class="enter-button">
+        <span>입장하기</span>
+    </a>
 </div>
-
-<div class="welcome-footer">
-    <button class="turn-off-btn" onclick="shutdown()">
-        <img src="icon/Menu_Logo.png" alt="Turn Off">
-        <span>다음에 또 만나기</span>
-    </button>
-    <div class="footer-text">
-        이름을 클릭하면 다음 페이지로 이동합니다.
-    </div>
-</div>
-
-<script>
-    function updateDateTime() {
-        const timeElement = document.getElementById('lockscreen-time');
-        const dateElement = document.getElementById('lockscreen-date');
-        const now = new Date();
-
-        // 시간 포맷 (예: 14:05)
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        timeElement.textContent = `${hours}:${minutes}`;
-
-        // 날짜 포맷 (예: 3월 6일 월요일)
-        const month = now.toLocaleString('ko-KR', { month: 'long' });
-        const day = now.toLocaleString('ko-KR', { day: 'numeric' });
-        const weekday = now.toLocaleString('ko-KR', { weekday: 'long' });
-        dateElement.textContent = `${month} ${day} ${weekday}`;
-    }
-
-    // 화면 끄기 함수
-    function shutdown() {
-        const overlay = document.getElementById('shutdown-overlay');
-        overlay.style.opacity = '1';
-
-        // 1.6초 후에 실제로 창을 닫습니다. (CSS의 transition 시간 1.5초보다 약간 길게)
-        setTimeout(function() {
-            window.close();
-        }, 1600);
-    }
-
-    // 1초마다 시간을 업데이트합니다.
-    setInterval(updateDateTime, 1000);
-    // 페이지가 열리자마자 바로 표시합니다.
-    updateDateTime();
-</script>
-
-<img src="./icon/Char.png" alt="캐릭터" class="bottom-right-character">
 
 </body>
 </html>

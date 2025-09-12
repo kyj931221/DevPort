@@ -1,0 +1,111 @@
+/* === 안드로이드 XR 공간 UI 환영 페이지 테마 (색상 변경) === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    /* 새로운 색상 팔레트 (이미지 기반) */
+    --panel-background: rgba(255, 255, 255, 0.4); /* 흰색 기반의 반투명 패널 */
+    --panel-border: rgba(255, 255, 255, 0.7);    /* 밝은 테두리 */
+    --text-primary: #333344;                     /* 진한 글씨색 */
+    --text-secondary: #666677;                   /* 부드러운 글씨색 */
+    --accent-glow: rgba(180, 100, 255, 0.5);     /* 보라빛 강조 그림자/광택 */
+    --hover-background: rgba(255, 255, 255, 0.6); /* 호버 시 더 밝아지는 배경 */
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* 배경은 이미지와 유사한 부드러운 파스텔 톤 */
+    background: linear-gradient(to top right, #e0eafc, #cfdef3);
+    color: var(--text-primary);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 동적 공간 배경 (이미지 배경과 유사하게 조정) */
+.spatial-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vh;
+    transform: translate(-50%, -50%);
+    /* 이미지와 유사한 부드러운 그라데이션 */
+    background: radial-gradient(circle at 70% 30%, #f0f4ff 0%, #d8e2ff 40%, #c7d2e0 100%);
+    animation: background-breathing 25s ease-in-out infinite; /* 애니메이션 속도 조정 */
+    z-index: -1;
+}
+
+@keyframes background-breathing {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+}
+
+/* 중앙 환영 패널 */
+.welcome-panel {
+    padding: 40px;
+    background: var(--panel-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid var(--panel-border);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* 그림자도 밝은 톤으로 */
+    width: 400px;
+}
+
+/* 프로필 이미지 */
+.welcome-panel .user-icon-box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--panel-border); /* 테두리도 밝게 */
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+.welcome-panel .user-icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 사용자 이름 및 설명 */
+.welcome-panel .user-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+.welcome-panel p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0 0 25px 0;
+}
+
+/* 입장 버튼 */
+.welcome-panel .enter-button {
+    display: block;
+    width: 200px; /* 버튼의 너비를 고정값으로 설정 */
+    margin: 30px auto 0 auto; /* 수평 중앙 정렬 및 위쪽 여백 */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.4); /* 버튼 배경도 밝게 */
+    border: 1px solid var(--panel-border);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.welcome-panel .enter-button:hover {
+    background: var(--hover-background);
+    color: var(--text-primary);
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: scale(1.05);
+}

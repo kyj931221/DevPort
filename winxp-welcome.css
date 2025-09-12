@@ -1,303 +1,102 @@
-/* === Windows XP 환영합니다 화면 테마 === */
-@import url('https://fonts.googleapis.com/css2?family=Tahoma&display=swap');
+/* === 공간 UI 환영 페이지 테마 === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --panel-background: rgba(28, 28, 45, 0.5);
+    --panel-border: rgba(255, 255, 255, 0.15);
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b0;
+    --accent-glow: rgba(70, 100, 255, 0.7);
+}
 
 body {
-    background: linear-gradient(to bottom, #5b99ec, #003399);
-    font-family: "Tahoma", "Gulim", sans-serif;
-    color: white;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #050510;
+    color: var(--text-primary);
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* 이 부분을 center로 변경 */
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    overflow: hidden;
 }
 
-.welcome-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
+.spatial-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vh;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #2a2a4a 0%, #050510 60%);
+    animation: background-breathing 20s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes background-breathing {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* 중앙 환영 패널 */
+.welcome-panel {
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    /* 그림자 효과 추가 */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* 입체감을 더해주는 얇은 테두리 */
+    background: var(--panel-background);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid var(--panel-border);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    width: 400px;
 }
 
-.welcome-left {
-    flex: 1;
-    display: flex; /* 자식 요소들을 가로로 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    padding-right: 50px;
-}
-
-.welcome-left img {
+/* 프로필 이미지 */
+.welcome-panel .user-icon-box {
     width: 100px;
-    margin-bottom: 0; /* 기존 아래쪽 여백 제거 */
-    margin-right: 20px; /* 이미지와 텍스트 사이의 간격 추가 */
+    height: 100px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
-
-.welcome-left p {
-    font-size: 13px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.welcome-right {
-    flex: 1;
-}
-
-.user-tile {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: linear-gradient(to right, #2a68c1, #518cda);
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    transition: background 0.2s, box-shadow 0.2s ease-in-out; /* box-shadow 트랜지션 추가 /
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); / 그림자 효과 */
-}
-
-.user-tile:hover {
-    background: linear-gradient(to right, #3c7fdc, #6aa5e8);
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4); /* 호버 시 그림자 약간 더 진하게 */
-}
-
-.user-icon-box {
-    width: 60px;
-    height: 60px;
-    background: url('./icon/xp-user-bg.png') no-repeat center center; /* XP 사용자 아이콘 배경 */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-}
-
-.user-icon-box img {
-    width: 48px;
-    height: 48px;
-    border-radius: 3px;
-}
-
-.user-name {
-    font-size: 22px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.welcome-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* XP 하단 바 스타일 */
-    background: linear-gradient(to top, #0d3b8a, #1e58b1);
-    border-top: 1px solid #6fa0ef;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* padding 값을 수정하여 오른쪽 여백(40px)을 더 줍니다. */
-    padding: 8px 40px 8px 20px;
-    font-size: 13px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-    box-sizing: border-box; /* padding이 width에 영향을 주지 않도록 추가 */
-}
-
-.turn-off-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-}
-
-.turn-off-btn img {
-    width: 24px;
-    height: 24px;
-}
-
-.footer-text {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* 기존 #clock-container 스타일을 아래 코드로 교체 */
-#lockscreen-container {
-    position: absolute;
-    left: 50px;
-    bottom: 100px; /* 위치를 하단 기준으로 변경 */
-    transform: none; /* transform 제거 */
-    text-align: left;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-#lockscreen-time {
-    font-size: 8rem; /* 매우 큰 글자 크기 */
-    font-weight: 300; /* 얇은 폰트 */
-    letter-spacing: -5px;
-}
-
-#lockscreen-date {
-    font-size: 2rem; /* 시간보다 작은 글자 크기 */
-    font-weight: 400;
-    margin-left: 5px;
-}
-
-/* === 화면 끄기 효과 스타일 (추가) === */
-#shutdown-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+.welcome-panel .user-icon-box img {
     width: 100%;
     height: 100%;
-    background-color: #000;
-    opacity: 0; /* 기본적으로 투명 */
-    pointer-events: none; /* 클릭 방지 */
-    transition: opacity 1.5s ease-in; /* 서서히 어두워지는 효과 */
-    z-index: 9999; /* 가장 위에 표시 */
+    object-fit: cover;
 }
 
-/* '다음에 또 만나기' 버튼 스타일 수정 */
-.turn-off-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
+/* 사용자 이름 및 설명 */
+.welcome-panel .user-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.welcome-panel p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
-/* === 우측 하단 캐릭터 스타일 (추가) === */
-.bottom-right-character {
-    position: fixed;
-    right: 30px;
-    bottom: 50px; /* 하단 바(footer) 바로 위에 위치하도록 조정 */
-    width: 550px; /* 이미지 크기 (원하는 대로 조절) */
-    height: auto;
-    z-index: 10; /* 다른 요소들 위에 표시 */
-    transition: transform 0.3s ease-in-out;
+/* 입장 버튼 */
+.welcome-panel .user-tile {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--panel-border);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
-
-.bottom-right-character:hover {
-    transform: translateY(-10px); /* 마우스를 올리면 살짝 위로 이동 */
-}
-
-/* === 반응형 디자인을 위한 미디어 쿼리 (추가) === */
-
-/* 태블릿 사이즈 (가로 820px 이하) */
-@media (max-width: 820px) {
-    .welcome-container {
-        width: 90%; /* 너비를 800px 고정에서 90%로 변경 */
-        flex-direction: column; /* 세로로 쌓이도록 변경 */
-        padding: 20px;
-    }
-
-    .welcome-left {
-        text-align: center; /* 로고와 텍스트 중앙 정렬 */
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-
-    #lockscreen-container {
-        left: 20px;
-        bottom: auto; /* 하단 기준 위치 해제 */
-        top: 20px; /* 상단 기준으로 변경 */
-    }
-
-    #lockscreen-time {
-        font-size: 5rem; /* 시계 크기 축소 */
-    }
-
-    #lockscreen-date {
-        font-size: 1.5rem; /* 날짜 크기 축소 */
-    }
-
-    .bottom-right-character {
-        width: 120px; /* 캐릭터 크기 축소 */
-        right: 15px;
-        bottom: 50px;
-    }
-
-    .welcome-footer {
-        flex-direction: column; /* 푸터 내용을 세로로 쌓음 */
-        height: auto;
-        padding: 10px;
-    }
-}
-
-/* 모바일 사이즈 (가로 480px 이하) */
-@media (max-width: 480px) {
-    .welcome-left img {
-        width: 150px; /* 로고 이미지 크기 축소 */
-    }
-
-    #lockscreen-time {
-        font-size: 3.5rem; /* 시계 크기 더 축소 */
-    }
-
-    #lockscreen-date {
-        font-size: 1.1rem; /* 날짜 크기 더 축소 */
-    }
-
-    .user-name {
-        font-size: 18px; /* 사용자 이름 크기 축소 */
-    }
-
-    .bottom-right-character {
-        width: 90px; /* 캐릭터 크기 더 축소 */
-        right: 10px;
-        bottom: 80px; /* 푸터가 길어져서 위치 조정 */
-    }
-
-    .footer-text {
-        font-size: 11px; /* 푸터 텍스트 크기 축소 */
-    }
-}
-
-/* === 가로 화면 반응형 디자인 (추가) === */
-
-/* 태블릿 가로 모드 (높이가 600px 이하일 때) */
-@media (max-height: 600px) and (orientation: landscape) {
-
-    /* 중앙 컨테이너가 너무 위로 올라가지 않도록 조정 */
-    .welcome-container {
-        margin-top: 0;
-        transform: scale(0.85); /* 전체적인 크기를 약간 줄임 */
-    }
-
-    /* 시계 위치 및 크기 조정 */
-    #lockscreen-container {
-        top: 15px; /* 상단에 고정 */
-        left: 20px;
-        bottom: auto;
-    }
-
-    #lockscreen-time {
-        font-size: 4rem; /* 시계 크기 축소 */
-    }
-
-    #lockscreen-date {
-        font-size: 1.3rem; /* 날짜 크기 축소 */
-    }
-
-    /* 캐릭터 위치 및 크기 조정 */
-    .bottom-right-character {
-        width: 100px; /* 캐릭터 크기 축소 */
-        bottom: 45px; /* 하단 바 바로 위에 오도록 */
-    }
-
-    /* 하단 바의 텍스트가 너무 길면 줄바꿈되도록 처리 */
-    .welcome-footer {
-        align-items: center;
-    }
-    .footer-text {
-        text-align: right;
-    }
+.welcome-panel .user-tile:hover {
+    background: #fff;
+    color: #111;
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: scale(1.05);
 }
